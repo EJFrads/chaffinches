@@ -21,3 +21,15 @@ write.table(chaff2,
             file, 
             quote = FALSE,
             row.names = FALSE)
+
+##summarise the data
+str(chaff2)
+chaff2 %>% group_by(gender) %>% 
+  summarise(mean = mean(mass),
+            n = length(n),
+            sd = sd(mass))
+
+##analysis to see if there is a difference in mean between genders
+t.test(data = chaff2,
+       mass ~ gender,
+       var.equal = T)
