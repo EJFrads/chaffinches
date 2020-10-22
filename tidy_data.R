@@ -33,3 +33,10 @@ chaff2 %>% group_by(gender) %>%
 t.test(data = chaff2,
        mass ~ gender,
        var.equal = T)
+
+#hi Emily, it's Hannah. Here's a bit of my code just to check this works
+chaff2 %>% group_by(sex) %>% 
+  summarise(mean = mean(mass),
+            n = length(n),
+            sd = sd(mass))
+
